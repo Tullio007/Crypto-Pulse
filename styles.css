@@ -1,0 +1,137 @@
+/* ===== Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: #000000;
+  color: #bdbdbd;
+  min-height: 100vh;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+  border-bottom: 1px solid #424242;
+  padding: 2rem 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #e0e0e0;
+}
+
+.header p {
+  color: #9e9e9e;
+  margin-top: 0.25rem;
+}
+
+/* ===== Conteúdo ===== */
+.main {
+  padding: 2rem 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1280px) {
+  .grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+.status {
+  color: #757575;
+  grid-column: 1 / -1;
+}
+
+/* ===== Card da moeda ===== */
+.card {
+  background-color: #212121;
+  border: 1px solid #424242;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-top img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.card-name {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+.card-symbol {
+  color: #9e9e9e;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.card-price {
+  color: #f5f5f5;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card-change {
+  font-size: 0.875rem;
+}
+
+.card-change.up {
+  color: #e0e0e0;
+}
+
+.card-change.down {
+  color: #757575;
+}
+
+.card-change.neutral {
+  color: #9e9e9e;
+}
+
+/* Seta colorida conforme valorização (verde) ou desvalorização (vermelho) */
+.arrow {
+  font-weight: 700;
+}
+
+.arrow.up {
+  color: #22c55e;
+}
+
+.arrow.down {
+  color: #ef4444;
+}
+
+/* Sem alteração: traço cinza indicando que se manteve */
+.arrow.neutral {
+  color: #9e9e9e;
+}
